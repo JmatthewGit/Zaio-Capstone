@@ -3,10 +3,9 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path");
+const fs = require("fs");
 
 const User = require("../models/User");
-
-const fs = require("fs");
 
 // Corrected path for uploads directory
 const uploadsDir = path.join(__dirname, "../public/uploads");
@@ -28,88 +27,31 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// User Register Route
-router.post("/register", upload.single("profileImage"), async (req, res) => {
-  try {
-    const { firstName, lastName, email, password } = req.body;
-
-    if (!req.file) {
-      return res.status(400).send("No file uploaded");
-    }
-
-    // Store the relative path
-    const profileImagePath = `uploads/${req.file.filename}`;
-
-    // Check if user already exists
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
-      return res.status(409).json({ message: "User already exists!" });
-    }
-
-    // Hash the password
-    const salt = await bcrypt.genSalt();
-    const hashedPassword = await bcrypt.hash(password, salt);
-
-    // Create new user
-    const newUser = new User({
-      firstName,
-      lastName,
-      email,
-      password: hashedPassword,
-      profileImagePath,
-    });
-
-    await newUser.save();
-
-    res.status(200).json({
-      message: "User registered successfully!",
-      user: newUser,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({ message: "Registration failed!", error: err.message });
-  }
-});
-
-// User Login Route
-router.post("/login", async (req, res) => {
+// Example route with detailed logging
+router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
+    console.log('Login request received:', { email });
 
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(400).json({ message: "Invalid email or password" });
+      console.log('User not found:', email);
+      return res.status(400).json({ message: 'User not found' });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      return res.status(400).json({ message: "Invalid email or password" });
+      console.log('Invalid credentials for user:', email);
+      return res.status(400).json({ message: 'Invalid credentials' });
     }
 
-    const token = jwt.sign(
-      { userId: user._id, email: user.email },
-      process.env.JWT_SECRET,
-      { expiresIn: "1h" }
-    );
-
-    res.status(200).json({
-      message: "Login successful",
-      user: {
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email,
-        profileImagePath: user.profileImagePath,
-      },
-      token,
-    });
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+    console.log('Token generated for user:', email);
+    res.json({ token });
   } catch (err) {
-    console.log(err);
-    res.status(500).json({ message: "Login failed", error: err.message });
+    console.error('Error in /login route:', err);
+    res.status(500).json({ message: 'Server error' });
   }
 });
 
 module.exports = router;
-
-
-
-
