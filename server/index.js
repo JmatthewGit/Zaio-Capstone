@@ -4,19 +4,19 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const path = require("path");
 const app = express();
-
 const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
-app.use(express.static("public"));
 
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: process.env.NODE_ENV === "production" 
+    ? "https://zaio-capstone-23ffac63b637.herokuapp.com"
+    : "http://localhost:3000",
   methods: "GET,POST,PUT,DELETE",
   credentials: true,
 };
-app.use(cors(corsOptions)); 
+app.use(cors(corsOptions));
 
 // Import Routes
 const authRoutes = require("./routes/auth.js");
@@ -24,36 +24,49 @@ const listingRoutes = require("./routes/listing.js");
 const reservationRoutes = require("./routes/reservation.js");
 
 // API Routes
-app.use("/auth", authRoutes); 
-app.use("/api/listings", listingRoutes); 
-app.use("/api/reservations", reservationRoutes); 
+app.use("/auth", authRoutes);
+app.use("/api/listings", listingRoutes);
+app.use("/api/reservations", reservationRoutes);
+
+// MongoDB Connection
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('Connected to MongoDB'))
+  .catch((err) => {
+    console.error('MongoDB connection error:', err);
+    process.exit(1);
+  });
+
+mongoose.connection.on('error', err => {
+  console.error('MongoDB connection error:', err);
+});
 
 // Serve Frontend in Production
 if (process.env.NODE_ENV === "production") {
   const buildPath = path.join(__dirname, "../client/build");
   app.use(express.static(buildPath));
-
-  app.get("/*", (req, res) => {
-    res.sendFile(
-      path.join(__dirname, "../client/build/index.html"),
-      function (err) {
-        if (err) {
-          res.status(500).send(err);
-        }
-      }
-    );
+  
+  app.get("*", (req, res, next) => {
+    try {
+      res.sendFile(path.join(__dirname, "../client/build/index.html"));
+    } catch (err) {
+      next(err);
+    }
   });
 }
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI)
-.then(() => console.log('Connected to MongoDB'))
-.catch((err) => console.error('Database connection error:', err));
-
 // Error handling middleware
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send('Something broke!');
+  console.error('Error:', err);
+  
+  if (process.env.NODE_ENV === "production") {
+    res.status(500).json({ message: "Internal Server Error" });
+  } else {
+    res.status(500).json({
+      message: "Internal Server Error",
+      error: err.message,
+      stack: err.stack
+    });
+  }
 });
 
 app.listen(port, () => {
