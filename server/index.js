@@ -50,6 +50,7 @@ const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI, {
       ssl: true, // Ensure SSL is enabled if required by your MongoDB Atlas cluster
+      tlsAllowInvalidCertificates: true, // Allow invalid certificates if needed
     });
     console.log('MongoDB connected successfully');
   } catch (err) {
