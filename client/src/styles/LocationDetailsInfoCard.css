@@ -1,0 +1,131 @@
+@import "./Variables.css";
+@import "./breakpoints.css";
+
+.modal_top {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 15px 0; 
+}
+
+.modal_top_rating {
+    display: flex;
+    align-items: center; 
+    gap: 0.5rem; 
+}
+
+.modal_top_rating_icon {
+    color: #ff385c;
+}
+
+.modal_top_rating h4:nth-of-type(2) {
+    text-decoration: underline;
+    text-underline-offset: 3px; 
+}
+
+.modal_banner {
+    border: 1px solid #d3d3d3; 
+    border-radius: 10px;
+    background-color: #ffffff; 
+}
+
+.modal_dates {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_check_out_date_picker, .modal_check_in_date_picker {
+    border-left: 1px solid #d3d3d3; 
+    border-bottom: 1px solid #d3d3d3; 
+    padding-left: 8px; 
+    padding-bottom: 6px;
+    padding-top: 8px;
+    flex: 1; 
+}
+
+.modal_guest_picker {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 8px 16px;
+}
+  
+.modal_guest_picker_left {
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+    flex-direction: column; 
+    align-items: flex-start; 
+}
+
+  
+.modal_guest_picker h4 {
+    margin: 0;
+    cursor: pointer; 
+}
+  
+.modal_guest_picker p {
+    color: gray;
+    font-size: 14px;
+}
+  
+.modal_guest_picker_icon {
+    cursor: pointer; 
+    color: #555; 
+    transition: transform 0.2s ease; 
+}
+  
+.modal_guest_picker_icon:hover {
+    transform: scale(1.1); 
+}
+
+.modal_reservation button {
+    background-color: #ff385c; 
+    color: white; 
+    width: 100%;
+    height: 40px;
+    padding: 10px; 
+    border: none; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    cursor: pointer; 
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.modal_reservation h5 {
+    font-size: 14px; 
+}
+
+.modal_reservation p {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-size: 12px;
+    color: grey;
+}
+
+.modal_fees {
+    padding: 15px 0;
+    border-bottom: 1px solid #d3d3d3; 
+}
+
+.modal_fees div {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 10px; 
+}
+
+.modal_fees p {
+    margin: 0; 
+}
+
+.modal_fees_total {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    margin-top: 15px;
+}

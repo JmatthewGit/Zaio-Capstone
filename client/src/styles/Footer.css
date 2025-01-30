@@ -1,0 +1,67 @@
+@import "./Variables.css";
+@import "./breakpoints.css";
+
+.footer_info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 equal-width columns */
+    gap: 40px; /* Adds spacing between columns */
+    padding: 40px; /* Adds padding around the whole container */
+    background-color: #f7f7f7; /* Optional: Background color for better visibility */
+}
+
+.footer_info div {
+    display: flex;
+    flex-direction: column; /* Stacks the content vertically */
+}
+
+.footer_info h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px; /* Adds space below headings */
+}
+
+.footer_info p {
+    font-size: 16px;
+    margin: 5px 0; /* Adds space between items */
+    cursor: pointer; /* Adds interactivity for hover effects */
+    color: gray;
+}
+
+.footer_info p:hover {
+    text-decoration: underline; /* Underlines text on hover */
+}
+
+.footer_bottom {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid lightgray;
+    padding: 35px;
+    background-color: #f7f7f7;
+}
+
+.footer_bottom_left > p {
+    padding: 5px;
+    font-size: 15px;
+    color: gray;
+}
+
+.footer_bottom_right {
+    display: flex; /* Makes items align horizontally */
+    align-items: center; /* Vertically centers the items */
+    gap: 10px; /* Adds spacing between items */
+    margin-left: auto; /* Pushes this div to the right if in a flex container */
+}
+
+.footer_bottom_right > p {
+    padding: 5px;
+    font-size: 14px;
+    text-decoration: underline; /* Underlines the text */
+    margin: 0; /* Removes default margin for consistent spacing */
+    cursor: pointer; /* Adds a pointer cursor for interactivity */
+    color: gray;
+}
+
+.footer_bottom_right > svg {
+    cursor: pointer; /* Makes icons interactive with a pointer cursor */
+    color: gray;
+}

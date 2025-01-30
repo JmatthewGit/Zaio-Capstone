@@ -1,0 +1,125 @@
+@import "./Variables.css";
+@import "./breakpoints.css";
+
+.slide {
+    margin: 25px;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    width: 96%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space between h1 and button */
+    align-items: flex-start; /* Align content to the left */
+    padding: 20px;
+    background: url("../../public/assets/slide.jpg") center center / cover no-repeat; /* Set the background image */
+  }
+  
+  .slide h1 {
+    font-size: 60px;
+    color: white;
+    margin: 80px;
+    z-index: 1; /* Ensure it is above the background */
+  }
+  
+  .slide button {
+    background-color: white;
+    border: none;
+    padding: 10px 20px;
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1; /* Ensure it is above the background */
+    margin: 80px;
+  }
+  
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Place the background below other elements */
+    opacity: 0.5; /* Optional: Add a slight overlay effect */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .slide h1 {
+      font-size: 30px;
+    }
+  
+    .slide button {
+      font-size: 16px;
+      padding: 8px 16px;
+    }
+  }
+
+  .future_getaways h1 {
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+.future_getaways_top {
+    display: flex; /* Align items horizontally */
+    align-items: center; /* Vertically center the items */
+    gap: 40px; /* Space between items */
+    padding: 0px 30px; /* 10px top/bottom, 30px left/right */
+}
+
+.future_getaways_top h5 {
+    text-decoration: underline; /* Underlines the h5 text */
+    margin: 0; /* Removes default margin */
+    font-size: 16px; /* Adjust as needed */
+    white-space: nowrap; /* Prevents text from wrapping */
+    cursor: pointer; /* Indicates interactivity */
+}
+
+.future_getaways_top p {
+    margin: 0; /* Removes default margin */
+    font-size: 16px; /* Adjust as needed */
+    white-space: nowrap; /* Prevents text from wrapping */
+    cursor: pointer; /* Indicates interactivity */
+    color: gray;
+}
+
+.future_getaways_top h5 {
+    text-decoration: underline; /* Underlines text on hover */
+    text-underline-offset: 15px; /* Adjust the spacing between the underline and text */
+    margin-left: 10px;
+}
+
+
+.future_getaways_info{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 equal-width columns */
+    gap: 40px; /* Adds spacing between columns */
+    padding: 40px; /* Adds padding around the whole container */
+}
+
+.future_getaways_info div {
+    display: flex;
+    flex-direction: column; /* Stacks the content vertically */
+}
+
+.future_getaways_info h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px; /* Adds space below headings */
+}
+
+.future_getaways_info p {
+    font-size: 16px;
+    cursor: pointer; /* Adds interactivity for hover effects */
+    color: gray;
+    margin-bottom: 15px; /* Adds space below headings */
+}
+
+.future_getaways_info h4 {
+    text-decoration: underline; /* Underlines text on hover */
+    font-size: 18px;
+}
+  

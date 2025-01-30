@@ -1,0 +1,98 @@
+@import "./Variables.css";
+@import "./breakpoints.css";
+
+.inspiration_title, .discover_title {
+    padding-top: 40px;
+    margin-left: 40px;
+}
+
+.inspiration_cards, .discover_cards {
+    display: flex;
+    padding: 10px 30px;
+}
+
+.shop {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    margin-left: 10px;
+    gap: 100px; 
+    padding: 60px 0;
+}
+
+/* Style for the shop cards */
+.shop_cards img {
+    height: 280px;
+    width: 950px;
+}
+
+/* Style for the heading */
+.gift_cards h1 {
+    font-size: 50px;
+    font-weight: 400;
+    margin-left: 50px;
+    margin-bottom: 40px;
+}
+
+/* Style for the button */
+.shop button {
+    background-color: black;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 50px;
+    transition: all 0.3s ease-in-out; 
+}
+
+/* Medium screens (tablets and smaller) */
+@media (max-width: 768px) {
+    .shop {
+        flex-direction: column; 
+        gap: 20px; 
+    }
+
+    .shop_cards img {
+        height: 200px; 
+        width: 90%; 
+    }
+
+    .gift_cards h1 {
+        font-size: 40px; 
+        margin-left: 20px;
+        text-align: center; 
+    }
+
+    .shop button {
+        font-size: 18px; 
+        margin-left: 0; 
+        align-self: center; 
+    }
+}
+
+/* Small screens (mobile phones) */
+@media (max-width: 480px) {
+    .shop {
+        gap: 10px; 
+    }
+
+    .shop_cards img {
+        height: 150px; 
+        width: 100%; 
+    }
+
+    .gift_cards h1 {
+        font-size: 30px; 
+        margin-bottom: 20px;
+    }
+
+    .shop button {
+        font-size: 16px;
+        padding: 8px 16px; 
+        width: 80%; 
+    }
+}
+
+

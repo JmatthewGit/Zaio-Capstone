@@ -1,0 +1,79 @@
+@import "./Variables.css";
+@import "./breakpoints.css";
+
+.location_card {
+    display: flex;
+    width: 90vw;
+    height: 280px; /* Ensure consistent card height */
+    padding: 10px;
+    margin: 60px;
+    border: 2px solid #ddd;
+    border-radius: 10px; /* Optional: add rounded edges to the card */
+    overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.location_card_image {
+    flex: 1; /* Let the image occupy proportional space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location_card_image img {
+    width: 100%;
+    height: 100%; /* Fill the container */
+    border-radius: 10px; /* Rounded edges for the image */
+    object-fit: cover;
+}
+
+.location_card_info {
+    flex: 2; /* Info takes more space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.location_card_info_top {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.location_card_info_top_left {
+    width: 380px;
+}
+
+.location_card_info_top_left h5 {
+    color: gray;
+}
+
+.location_card_info_top_right {
+    margin-left: 450px;
+}
+
+.location_card_info_mid {
+    color: gray;
+    padding: 10px;
+}
+
+.location_card_info_bottom {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.location_card_info_bottom_left {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    width: 280px;
+}
+
+.location_card_info_bottom_right {
+    margin-left: 550px;
+}
+
+.star_icon {
+    color: #ffd700; /* Bright yellow */
+}

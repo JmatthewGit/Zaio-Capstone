@@ -1,0 +1,288 @@
+@import "../styles/Variables.css";
+@import "../styles/breakpoints.css";
+
+
+.view_categories {
+    border-bottom: 1px solid lightgray;
+    margin: 20px;
+}
+
+.view_categories button {
+    background-color: white;
+    border-color: grey;
+    padding: 12px;
+    align-items: center;
+    border-radius: 16px;
+    margin: 10px;
+}
+
+.create-listing {
+  padding: 40px ;
+
+  @media (max-width: 768px) {
+    padding: 20px 10px;
+  }
+}
+
+.create-listing  h1 {
+    padding-bottom: 60px;
+}
+
+.create-listing  p {
+    padding-bottom: 10px;
+}
+
+.create-listing_step1, .create-listing_step2, .create-listing_step3, .create-listing_step5 {
+    display: flex;
+    gap: 180px;
+    padding-bottom: 20px;
+}
+
+.create-listing-step1_right {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    gap: 30px;
+}
+
+.create-listing-step1-left input {
+    max-width: 300px;  
+    height: 40px; 
+    padding: 8px 12px; 
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box; 
+}
+
+.create-listing-step1_right input {
+    max-width: 300px;  
+    height: 40px; 
+    padding: 8px 12px; 
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box; 
+}
+
+.create-listing-step1_right select {
+    color: gray;
+    max-width: 300px;  
+    height: 40px; 
+    padding: 12px; 
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box; 
+}
+
+.create-listing-step1_right .basics {
+  display: flex;
+  gap: 20px;
+}
+
+.basics .basic {
+  padding: 10px;
+  border: 1px solid #ccc; 
+  border-radius: 4px;
+}
+
+.basics .basic_count {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+
+.create-listing-step2-left input {
+    max-width: 170px;  
+    height: 40px; 
+    padding: 8px 12px; 
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box; 
+}
+
+.create-listing-step2-left span {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.create-listing-step2-right input {
+    max-width: 300px;  
+    height: 40px; 
+    padding: 8px 12px; 
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box; 
+}
+
+.create-listing-step3-left textarea {
+  max-width: 300px;  
+  height: 40px; 
+  padding: 8px; 
+  border: 1px solid #ccc;
+  border-radius: 4px; 
+  box-sizing: border-box; 
+}
+
+.create-listing-step3-right .selected-amenities {
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.selected-amenities .amenity-chip {
+  padding: 2px;
+  border-radius: 10px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  max-width: 300px;
+  height: 35px;
+}
+
+.selected-amenities .remove-button {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.selected-amenities input {
+  border: none;
+  outline: none;
+}
+
+
+  .create-listing_step3 button {
+    font-size: 14px;
+    padding: 12px 25px; 
+    border: none;
+    background-color: #007BFF; 
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 25px 0;
+  }
+
+.create-listing-step3-right {
+  display: flex;
+  gap: 20px;
+}
+
+  .create-listing_step4 input {
+    width: 100%; 
+    max-width: 700px; 
+    height: 200px; 
+    padding: 8px 12px; 
+    font-size: 16px; 
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box; 
+  }
+
+  .create-listing_step4 h3 {
+    margin: 40px 0 20px;
+    font-size: 16px;
+  }
+  
+  .create-listing_step4 .photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .create-listing_step4 .photos .photo {
+    position: relative;
+    width: 250px;
+    height: 150px;
+    cursor: move;
+  }
+  
+  .create-listing_step4 .photos .photo img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .create-listing_step4 .photos .photo button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 3px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .create-listing_step4 .photos .photo button:hover {
+    color: #ff4b5c; /* Replace with your desired pink-red color */
+  }
+  
+  .create-listing_step4 .photos label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px dashed #ccc; /* Replace with your desired grey color */
+  }
+  
+  .create-listing_step4 .photos label .icon {
+    font-size: 60px;
+  }
+  
+  .create-listing_step4 .photos label p {
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .create-listing_step4 .photos .together {
+    width: 250px;
+    height: 150px;
+  }
+  
+  .create-listing_step4 .photos .alone {
+    padding: 40px 100px;
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .create-listing_step4 .photos .alone {
+      padding: 40px 80px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .create-listing_step4 .photos .alone {
+      padding: 40px 30px;
+    }
+  }
+  
+
+  
+  .create-listing-step5-left button{
+    font-size: 18px;
+    padding: 16px 60px; 
+    border: none;
+    background-color: #007BFF; 
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 36px 0;
+  }
+
+  .create-listing-step5-right button{
+    font-size: 18px;
+    padding: 16px 60px; 
+    border: none;
+    background-color: palevioletred; 
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 36px 0;
+  }
+
+  
+

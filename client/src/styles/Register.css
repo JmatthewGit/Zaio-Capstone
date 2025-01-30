@@ -1,0 +1,107 @@
+@import "./Variables.css";
+@import "./breakpoints.css";
+
+.register {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url("../../public/assets/register.jpg") center;
+  background-size: cover;
+}
+
+.register_content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 40%;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+}
+
+@media (max-width: 1000px) {
+  .register_content {
+    width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .register_content {
+    width: 80%;
+  }
+}
+
+.register_content_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.register_content_form input {
+  width: 100%;
+  padding: 7px 15px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  outline: none;
+  text-align: center;
+  color: white;
+}
+
+.register_content_form input:not(:placeholder-shown):focus {
+  background: transparent;
+}
+
+.register_content_form input::placeholder {
+  color: white;
+}
+
+.register_content_form label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+  font-size: 14px;
+  color: white;
+}
+
+.register_content_form label img {
+  width: 25px;
+}
+
+.register_content_form button {
+  margin-top: 15px;
+  width: 50%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--pinkred);
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.register_content_form button:hover {
+  box-shadow: 0 0 10px 3px rgba(255, 255, 255);
+}
+
+.register_content a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.register_content a:hover {
+  text-decoration: underline;
+}
+
+  

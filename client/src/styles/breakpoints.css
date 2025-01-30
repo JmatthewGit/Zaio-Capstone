@@ -1,0 +1,44 @@
+
+
+/* Media Query for Small Screens */
+@media (max-width: 480px) {
+    .sm {
+      /* Add specific styles for this breakpoint here */
+    }
+  }
+  
+  /* Media Query for Medium-Small Screens */
+  @media (max-width: 580px) {
+    .mm {
+      /* Add specific styles for this breakpoint here */
+    }
+  }
+  
+  /* Media Query for Medium Screens */
+  @media (max-width: 720px) {
+    .md {
+      /* Add specific styles for this breakpoint here */
+    }
+  }
+  
+  /* Media Query for Medium-Large Screens */
+  @media (max-width: 820px) {
+    .ml {
+      /* Add specific styles for this breakpoint here */
+    }
+  }
+  
+  /* Media Query for Large Screens */
+  @media (max-width: 1000px) {
+    .lg {
+      /* Add specific styles for this breakpoint here */
+    }
+  }
+  
+  /* Media Query for Extra-Large Screens */
+  @media (max-width: 1120px) {
+    .xl {
+      /* Add specific styles for this breakpoint here */
+    }
+  }
+  

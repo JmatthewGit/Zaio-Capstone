@@ -1,0 +1,90 @@
+@import "./Variables.css";
+@import "./breakpoints.css";
+
+.locations h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:20px;
+    color:  #ff385c;
+}
+
+.locations h4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:10px;
+    color:  #ff385c;
+    font-size: 16px;
+}
+
+.locations_filter {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap if needed */
+    gap: 10px; /* Adds spacing between items */
+    align-items: center;
+    justify-content: center; /* Centers content horizontally */
+    padding: 15px;
+}
+
+.locations_filter_price,
+.locations_filter_place,
+.locations_filter_filters {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px; /* Rounded border */
+    background-color: #f9f9f9; /* Optional: adds a light background */
+    cursor: pointer; /* Indicates interactivity */
+    transition: box-shadow 0.2s; /* Adds a hover effect */
+}
+
+.locations_filter_options {
+    display: flex; /* Makes the <p> tags display horizontally */
+    flex-wrap: wrap; /* Allows wrapping to the next line if needed */
+    gap: 10px; /* Adds spacing between <p> tags */
+    align-items: center;
+}
+
+.locations_filter_options p {
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 15px; /* Rounded border */
+    margin: 0; /* Remove default margins */
+    background-color: #fff; /* White background */
+    cursor: pointer; /* Indicates interactivity */
+    transition: box-shadow 0.2s; /* Adds a hover effect */
+}
+
+.locations_filter_price:hover,
+.locations_filter_place:hover,
+.locations_filter_filters:hover,
+.locations_filter_options p:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle hover shadow */
+}
+
+
+
+.location_selected_options {
+    display: flex;
+    background-color: black;
+    color: white;
+    width: 650px;
+    height: 50px;
+    border-radius: 1000px;
+    padding: 8px 8px 8px 8px;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 410px;
+    font-weight: 400;
+}
+
+.location_selected_options span {
+    color: gray;
+    padding-left: 15px;
+    padding-right: 15px;
+}
