@@ -43,24 +43,14 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-// MongoDB Setup
-const PORT = process.env.PORT || 3001;
+// Connect to MongoDB
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log('Connected to MongoDB'))
+.catch((err) => console.error('Database connection error:', err));
 
-const connectDB = async () => {
-  try {
-    await mongoose.connect(process.env.MONGO_URI, {
-      ssl: true, // Ensure SSL is enabled if required by your MongoDB Atlas cluster
-      tlsAllowInvalidCertificates: true, // Allow invalid certificates if needed
-    });
-    console.log('MongoDB connected successfully');
-  } catch (err) {
-    console.error('Database connection error:', err.message);
-    process.exit(1);
-  }
-};
-
-connectDB();
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
