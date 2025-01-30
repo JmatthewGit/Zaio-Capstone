@@ -50,6 +50,12 @@ mongoose.connect(process.env.MONGODB_URI)
 .then(() => console.log('Connected to MongoDB'))
 .catch((err) => console.error('Database connection error:', err));
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
