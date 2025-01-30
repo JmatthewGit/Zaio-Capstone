@@ -16,5 +16,8 @@
     "url": "https://github.com/JmatthewGit/Zaio-Capstone/issues"
   },
   "homepage": "https://github.com/JmatthewGit/Zaio-Capstone#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.7"
+  }
 }
