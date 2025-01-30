@@ -18,6 +18,7 @@
   "homepage": "https://github.com/JmatthewGit/Zaio-Capstone#readme",
   "description": "",
   "dependencies": {
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
   }
 }
